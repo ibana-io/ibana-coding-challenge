@@ -15,6 +15,8 @@ declare module '@vue/runtime-core' {
     EmailDialogueWindow: typeof import('./src/app/components/EmailDialogueWindow.vue')['default']
     FetchingAccountData: typeof import('./src/app/pages/OpenBanking/FetchingAccountData.vue')['default']
     FlowSelection: typeof import('./src/app/pages/CommonFlow/FlowSelection.vue')['default']
+    Gif: typeof import('./src/app/pages/Gif.vue')['default']
+    GifList: typeof import('./src/app/pages/GifList.vue')['default']
     Imprint: typeof import('./src/app/pages/Legal/Imprint.vue')['default']
     InputScaCode: typeof import('./src/app/pages/OpenBanking/InputScaCode.vue')['default']
     Invite: typeof import('./src/app/pages/SignUp/Invite.vue')['default']
