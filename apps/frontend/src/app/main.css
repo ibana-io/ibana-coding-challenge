@@ -1,26 +1,64 @@
-/* @import "fonts.css"; */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-p,
-s h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div,
-span,
-a,
-li,
-ul,
-ol,
-button,
-input,
-textarea {
-  @apply text-black;
+/* main.css */
+
+/* Styles for Overview.vue */
+.overview-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-@layer components {
+.overview-gif {
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
 
+/* Styles for Search.vue */
+.search-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-gif {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+}
+
+.pagination button {
+  border: 1px solid #ccc;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
 }

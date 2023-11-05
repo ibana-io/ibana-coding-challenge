@@ -25,9 +25,9 @@ declare module 'vue-router' {
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'Overview',
-    component: () => import('./pages/Overview.vue'),
-    meta: { title: 'Overview' }
+    name: 'Search',
+    component: () => import('./pages/Search.vue'),
+    meta: { title: 'Search' }
   }
 ]
 

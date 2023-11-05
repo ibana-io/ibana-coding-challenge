@@ -37,6 +37,7 @@ declare module '@vue/runtime-core' {
     ResetButton: typeof import('./src/app/components/ResetButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/app/pages/Search.vue')['default']
     SelectCountry: typeof import('./src/app/pages/OpenBanking/SelectCountry.vue')['default']
     SelectInstitution: typeof import('./src/app/pages/OpenBanking/SelectInstitution.vue')['default']
     SelectScaMethod: typeof import('./src/app/pages/OpenBanking/SelectScaMethod.vue')['default']
