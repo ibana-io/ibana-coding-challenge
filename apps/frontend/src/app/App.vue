@@ -1,9 +1,9 @@
-
-
 <template>
-  <router-view />
-  <SearchInput @gifs-fetched="onGifsFetched" />
-  <GifList :gifs="gifs" />
+  <div class="p-4">
+    <router-view />
+    <SearchInput @gifs-fetched="onGifsFetched" />
+    <GifList :gifs="gifs" />
+  </div>
 </template>
 
 <script>
@@ -31,16 +31,4 @@ export default {
 </script>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  padding: 50px;
-}
-
-#App {
-  width: 800px;
-  margin: 0 auto;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <input v-model="search" placeholder="Type and search for gifs" @input="onSearch">
+  <input v-model="search" placeholder="Type and search for gifs" @input="onSearch" class="p-4 rounded-md text-base border border-gray-500 w-full" />
 </template>
 
 <script>
@@ -28,22 +28,12 @@ export default {
           this.$emit("gifs-fetched", result);
         });
     },
-  }, // Declare the emitted event
+  },
 };
 </script>
 
 <style scoped>
-input {
-  padding: 10px 16px;
-  border-radius: 4px;
-  font-size: 18px;
-  border: 2px solid #5f5f5f;
-  outline: 0;
-  display: block;
-  width: 100%;
-}
-
 input:focus {
-  border-color: #009ad7;
+  @apply border-blue-500;
 }
 </style>
