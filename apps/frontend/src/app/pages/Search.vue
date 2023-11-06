@@ -1,5 +1,5 @@
 <template>
-  <input v-model="search" placeholder="Type and search for gifs" @input="onSearch" class="p-4 rounded-md text-base border border-gray-500 w-full" />
+  <input v-model="search" placeholder="Type and search for gifs" class="p-4 rounded-md text-base border border-gray-500 w-full" @input="onSearch" />
 </template>
 
 <script>
@@ -10,6 +10,8 @@ export default {
     return {
       search: "",
       timeout: null,
+      apiKey: process.env.GIF_API_KEY, 
+      apiUrl: process.env.GIF_API_URL, 
     };
   },
   methods: {
@@ -21,7 +23,7 @@ export default {
     },
     makeSearch() {
       fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=F5mS76XaeimOHwrehHLN1xC8jCc0ftSw&q=${this.search}&limit=9`
+        `${this.apiUrl}/gifs/search?api_key=${this.apiKey}&q=${this.search}&limit=9`
       )
         .then((response) => response.json())
         .then((result) => {
