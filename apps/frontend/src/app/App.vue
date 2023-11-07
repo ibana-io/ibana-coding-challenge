@@ -1,34 +1,30 @@
 <template>
-  <div class="p-4">
-    <router-view />
+  <div>
     <SearchInput @gifs-fetched="onGifsFetched" />
-    <GifList :gifs="gifs" />
+    <GifDisplay :gifs="gifs" />
+    <!-- Add any additional components or content here -->
   </div>
 </template>
 
 <script>
-import GifList from "./pages/GifList.vue";
-import SearchInput from "./pages/Search.vue";
+import GifDisplay from "./pages/Gif.vue";
+import SearchInput from "./pages/Overview.vue";
 
 export default {
   name: "App",
   components: {
-    GifList,
-    SearchInput
+    SearchInput,
+    GifDisplay,
   },
   data() {
     return {
-      gifs: []
+      gifs: [],
     };
   },
   methods: {
     onGifsFetched(result) {
-      console.log(result);
       this.gifs = result.data;
-    }
-  }
+    },
+  },
 };
 </script>
-
-<style scoped>
-</style>
