@@ -7,7 +7,6 @@ import { SearchQuery } from './search.entity'
 @Injectable()
 export class SearchService {
   private logger = new Logger(this.constructor.name)
-
   constructor (
     @InjectRepository(SearchQuery)
     private readonly searchQueryRepository: Repository<SearchQuery>
@@ -47,7 +46,7 @@ export class SearchService {
         .createQueryBuilder()
         .select('DISTINCT query_text')
         .where('query_text ILIKE :query', { query: `%${query}%` })
-        .limit(10) // Adjust the limit as needed
+        .limit(50) // Adjust the limit as needed
         .getRawMany()
 
       return suggestions.map((item) => item.query_text)

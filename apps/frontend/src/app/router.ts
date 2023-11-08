@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router';
 import { createRouter, createWebHistory } from 'vue-router';
 
-import GifDisplay from './pages/Gif.vue';
+import GifDisplay from './pages/GifDisplay.vue';
 import SearchInput from './pages/Overview.vue';
 
 const scrollBehavior = (to, from, savedPosition) => {

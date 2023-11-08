@@ -2,12 +2,12 @@
   <div>
     <SearchInput @gifs-fetched="onGifsFetched" />
     <GifDisplay :gifs="gifs" />
-    <!-- Add any additional components or content here -->
+    <RouterView/>
   </div>
 </template>
 
 <script>
-import GifDisplay from "./pages/Gif.vue";
+import GifDisplay from "./pages/GifDisplay.vue";
 import SearchInput from "./pages/Overview.vue";
 
 export default {
