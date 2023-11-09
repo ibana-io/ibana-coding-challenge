@@ -7,6 +7,7 @@ import { SearchQuery } from './search.entity'
 @Injectable()
 export class SearchService {
   private logger = new Logger(this.constructor.name)
+
   constructor (
     @InjectRepository(SearchQuery)
     private readonly searchQueryRepository: Repository<SearchQuery>
@@ -22,6 +23,8 @@ export class SearchService {
       this.logger.log(`Stored search query: ${queryText}`)
     } catch (error) {
       this.logger.error(`Error storing search query: ${error.message}`)
+
+      throw new Error('Failed to store search query')
     }
   }
 

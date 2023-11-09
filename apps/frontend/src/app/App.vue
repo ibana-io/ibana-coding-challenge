@@ -2,7 +2,7 @@
   <div>
     <SearchInput @gifs-fetched="onGifsFetched" />
     <GifDisplay :gifs="gifs" />
-    <RouterView/>
+    <RouterView />
   </div>
 </template>
 

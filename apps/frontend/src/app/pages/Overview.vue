@@ -11,7 +11,6 @@
       />
     </div>
     <GifDisplay :gifs="fetchedGifs" />
-    <CustomPagination />
   </div>
 </template>
 
@@ -20,13 +19,11 @@
 
 <script>
 import GifDisplay from './GifDisplay.vue';
-import CustomPagination from './Pagination.vue';
 
 export default {
   name: "SearchInput",
   components: {
     GifDisplay,
-    CustomPagination,
   },
   data() {
     return {

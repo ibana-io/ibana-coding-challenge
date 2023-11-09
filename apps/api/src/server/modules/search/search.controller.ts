@@ -22,3 +22,4 @@ export class SearchController {
     return this.service.getSearchSuggestions(query)
   }
 }
+
