@@ -1,21 +1,25 @@
-import { Body, Controller } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import { Get, Param, Body, Controller, Post } from '@nestjs/common'
 
+import type { SearchQuery } from './search.entity'
 import { SearchService } from './search.service'
 
-@ApiTags('Search')
 @Controller('search')
 export class SearchController {
   constructor (private readonly service: SearchService) {}
 
-  @ApiOperation({
-    summary: 'Create Organization',
-    description: 'Create a new organization with a management user'
-  })
-  // define api operation here
-  storeSearchQuery (@Body() body: any): Promise<void> {
+  @Post()
+  async storeSearchQuery (@Body('query') query: string): Promise<void> {
+    await this.service.storeSearchQuery(query)
+  }
 
-    return null
+  @Get('history/:userId')
+  async getSearchHistory (@Param('userId') userId: string): Promise<SearchQuery[]> {
+    return this.service.getSearchHistory(userId)
+  }
+
+  @Get('suggestions/:query')
+  async getSearchSuggestions (@Param('query') query: string): Promise<string[]> {
+    return this.service.getSearchSuggestions(query)
   }
 }
 
